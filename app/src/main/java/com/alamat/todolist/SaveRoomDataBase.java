@@ -28,7 +28,7 @@ public class SaveRoomDataBase extends AppCompatActivity {
 
     public void insertTodo(){
         ToDoModel todoModel = new ToDoModel(binding.edTodoTile.getText().toString(),
-                binding.edTodoContent.getText().toString());
+                binding.edTodoContent.getText().toString(),false);
         RoomDataBase.getInstance(this).todoDao().insertTodo(todoModel);
         finish();
     }

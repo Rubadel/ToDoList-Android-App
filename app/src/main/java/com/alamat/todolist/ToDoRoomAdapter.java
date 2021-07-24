@@ -2,10 +2,13 @@ package com.alamat.todolist;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.ColorInt;
+import androidx.annotation.ColorRes;
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
@@ -23,6 +26,7 @@ public class ToDoRoomAdapter extends RecyclerView.Adapter<ToDoRoomAdapter.ViewHo
     List<ToDoModel> todoModels;
 
     Context context;
+
     //constructor
     public ToDoRoomAdapter(List<ToDoModel> todoModels, Context context) {
         this.todoModels = todoModels;
@@ -30,12 +34,16 @@ public class ToDoRoomAdapter extends RecyclerView.Adapter<ToDoRoomAdapter.ViewHo
     }
 
 
-    //    Delete interface
-    OnItemClickedListenerD deleteItemClickListener;
-    public void setDeleteItemClickListener(OnItemClickedListenerD deleteItemClickListener) {
-        this.deleteItemClickListener = deleteItemClickListener;
+    //interfaces
+    OnItemClickedListener onItemClick;
+    public void setItemClickListener(OnItemClickedListener onItemClick) {
+        this.onItemClick = onItemClick;
     }
 
+    OnItemClickedListenerU onItemUpdate;
+    public void setOnItemUpdateListener(OnItemClickedListenerU onItemUpdate) {
+        this.onItemUpdate = onItemUpdate;
+    }
 
     @NotNull
     @Override
@@ -51,24 +59,53 @@ public class ToDoRoomAdapter extends RecyclerView.Adapter<ToDoRoomAdapter.ViewHo
         ToDoModel todoModel = todoModels.get(position);
         holder.itemTodoRoomBinding.tvTodoTitle.setText(todoModel.getTodoTitle());
         holder.itemTodoRoomBinding.tvTodoContent.setText(todoModel.getTodoContect());
+
+        if (todoModels.get(position).isState() == true )
+        {
+            holder.itemTodoRoomBinding.checkBox.setTextColor(context.getResources().getColor(R.color.white));
+            holder.itemTodoRoomBinding.checkBox.setChecked(true);
+        }
+        else { holder.itemTodoRoomBinding.checkBox.setTextColor(context.getResources().getColor(R.color.black)); }
+
         //for delete
         holder.itemTodoRoomBinding.btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if (deleteItemClickListener != null) {
-                    deleteItemClickListener.onItemDelete(position, todoModels.get(position).getId());
+                if (onItemClick != null) {
+                    onItemClick.onItemClick(position, todoModels.get(position).getId());
                 }
             }
         });
 
-        //for update
-     holder.itemTodoRoomBinding.btnUpdate.setOnClickListener(new View.OnClickListener() {
+//        //for update
+     holder.itemView.setOnClickListener(new View.OnClickListener() {
          @Override
          public void onClick(View v) {
-             deleteItemClickListener.onItemDelete(position, todoModels.get(position).getId());
+             onItemUpdate.onItemUpdate(position, todoModels.get(position).getId());
          }
      });
+
+     //for state
+        holder.itemTodoRoomBinding.checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                int id = todoModels.get(position).getId();
+
+                if (holder.itemTodoRoomBinding.checkBox.isChecked()){
+                holder.itemTodoRoomBinding.checkBox.setTextColor(context.getResources().getColor(R.color.white));
+                RoomDataBase.getInstance(context.getApplicationContext()).todoDao().checkedState(true,id);
+            }
+                else
+                {
+                    holder.itemTodoRoomBinding.checkBox.setTextColor(context.getResources().getColor(R.color.black));
+                    RoomDataBase.getInstance(context.getApplicationContext()).todoDao().checkedState(false,id);
+                }
+
+            }
+        });
+
     }
 
     @Override
@@ -90,8 +127,13 @@ public class ToDoRoomAdapter extends RecyclerView.Adapter<ToDoRoomAdapter.ViewHo
         }
     }
 
-    //INTERFACE
-    public interface OnItemClickedListenerD{
-        void onItemDelete(int position, int id);
+    //INTERFACES
+    public interface OnItemClickedListener{
+        void onItemClick(int position, int id);
     }
+
+    public interface OnItemClickedListenerU{
+        void onItemUpdate(int position, int id);
+    }
+
 }

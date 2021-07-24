@@ -37,4 +37,7 @@ public interface TodoDao
             "or todoContect LIKE '%' || :seachedStatment || '%' ")
     List<ToDoModel> searchItem(String seachedStatment);
 
+    @Query("update todomodel set todoState = :todoState where `id` = :id")
+    void checkedState(boolean todoState, int id);
+
 }

@@ -78,9 +78,9 @@ public class GetRoomDataBase extends AppCompatActivity {
     }
 
     private void deleteItem(){
-        adapter.setDeleteItemClickListener(new ToDoRoomAdapter.OnItemClickedListenerD() {
+        adapter.setItemClickListener(new ToDoRoomAdapter.OnItemClickedListener() {
             @Override
-            public void onItemDelete(int position, int id) {
+            public void onItemClick(int position, int id) {
                 RoomDataBase.getInstance(getApplicationContext()).todoDao().deleteItem(id);
                 toDoModelList.remove(position);
                 adapter.notifyItemRemoved(position);
@@ -101,9 +101,10 @@ public class GetRoomDataBase extends AppCompatActivity {
     }
 
     private void update() {
-        adapter.setDeleteItemClickListener(new ToDoRoomAdapter.OnItemClickedListenerD() {
+
+        adapter.setOnItemUpdateListener(new ToDoRoomAdapter.OnItemClickedListenerU() {
             @Override
-            public void onItemDelete(int position, int id) {
+            public void onItemUpdate(int position, int id) {
                 Intent intent = new Intent(getApplicationContext(), UpdateToDoList.class);
                 intent.putExtra("title", String.valueOf(toDoModelList.get(position).getTodoTitle()));
                 intent.putExtra("content", String.valueOf(toDoModelList.get(position).getTodoContect()));

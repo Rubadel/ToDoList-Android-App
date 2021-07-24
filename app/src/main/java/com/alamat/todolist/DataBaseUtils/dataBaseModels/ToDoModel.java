@@ -20,13 +20,18 @@ public class ToDoModel extends ArrayList<ToDoModel> {
         @ColumnInfo
         String todoContect;
 
+        @ColumnInfo(defaultValue = "false", index = false)
+        public
+        boolean todoState;
+
         public ToDoModel() {
         }
 
         @Ignore
-        public ToDoModel(String todoTitle, String todoContect) {
+        public ToDoModel(String todoTitle, String todoContect, boolean todoState) {
             this.todoTitle = todoTitle;
             this.todoContect = todoContect;
+            this.todoState = todoState;
         }
 
     public int getId() {
@@ -52,4 +57,12 @@ public class ToDoModel extends ArrayList<ToDoModel> {
         public void setTodoContect(String todoContect) {
             this.todoContect = todoContect;
         }
+
+    public boolean isState() {
+        return todoState;
     }
+
+    public void setState(boolean state) {
+        this.todoState = todoState;
+    }
+}
