@@ -3,25 +3,23 @@ package com.alamat.todolist;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
 import com.alamat.todolist.DataBaseUtils.RoomDataBase;
 import com.alamat.todolist.DataBaseUtils.dataBaseModels.ToDoModel;
-import com.alamat.todolist.databinding.GetRoomDataBaseBinding;
+import com.alamat.todolist.databinding.MainAppActivityBinding;
 
 import java.util.List;
 
 import static android.media.CamcorderProfile.get;
 
-public class GetRoomDataBase extends AppCompatActivity {
+public class MainAppActivity extends AppCompatActivity {
 
-    GetRoomDataBaseBinding binding;
+    MainAppActivityBinding binding;
 
     RecyclerView.LayoutManager layoutManager;
     ToDoRoomAdapter adapter;
@@ -31,11 +29,11 @@ public class GetRoomDataBase extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = DataBindingUtil.setContentView(this, R.layout.get_room_data_base);
+        binding = DataBindingUtil.setContentView(this, R.layout.main_app_activity);
 
         //recycler setup
         adapter = new ToDoRoomAdapter( null,getApplicationContext());
-        layoutManager = new LinearLayoutManager(this);
+        layoutManager = new GridLayoutManager(this,2);
         binding.recyclerViewToDo.setLayoutManager(layoutManager);
         binding.recyclerViewToDo.setAdapter(adapter);
         //</.>
@@ -64,7 +62,7 @@ public class GetRoomDataBase extends AppCompatActivity {
         binding.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(GetRoomDataBase.this, SaveRoomDataBase.class);
+                Intent intent = new Intent(MainAppActivity.this, SaveToDoList.class);
                 startActivity(intent);
             }
         });

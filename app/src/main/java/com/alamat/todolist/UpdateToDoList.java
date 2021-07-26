@@ -3,6 +3,7 @@ package com.alamat.todolist;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -39,5 +40,11 @@ public class UpdateToDoList extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    public void back(View view)
+    {
+        Intent intent = new Intent(UpdateToDoList.this, MainAppActivity.class);
+        startActivity(intent);
     }
 }

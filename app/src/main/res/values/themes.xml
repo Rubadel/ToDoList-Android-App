@@ -18,4 +18,5 @@
         parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="background">@color/white_orange</item>
     </style>
+
 </resources>
