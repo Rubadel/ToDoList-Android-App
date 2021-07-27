@@ -3,13 +3,13 @@
     <item>
         <shape android:shape="rectangle">
             <gradient
-                android:centerColor="@color/baby_rose"
+                android:centerColor="@color/baby_goldenrose"
                 android:centerX="50%"
-                android:endColor="@color/baby_rose"
-                android:startColor="@color/baby_rose"/>
+                android:endColor="@color/baby_goldenrose"
+                android:startColor="@color/baby_goldenrose"/>
             <corners android:radius="20dp"></corners>
             <stroke
-                android:color="@color/dark_rose"
+                android:color="@color/brown"
                 android:width="1dp">
 
             </stroke>
