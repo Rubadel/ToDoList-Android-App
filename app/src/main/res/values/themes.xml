@@ -2,13 +2,13 @@
     <!-- Base application theme. -->
     <style name="Theme.ToDoList" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/baby_goldenrose</item>
-        <item name="colorPrimaryVariant">@color/baby_goldenrose</item>
-        <item name="colorOnPrimary">@color/baby_goldenrose</item>
+        <item name="colorPrimary">@color/gray</item>
+        <item name="colorPrimaryVariant">@color/gray</item>
+        <item name="colorOnPrimary">@color/gray</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/baby_goldenrose</item>
-        <item name="colorSecondaryVariant">@color/baby_goldenrose</item>
-        <item name="colorOnSecondary">@color/baby_goldenrose</item>
+        <item name="colorSecondary">@color/gray</item>
+        <item name="colorSecondaryVariant">@color/gray</item>
+        <item name="colorOnSecondary">@color/gray</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
@@ -16,7 +16,7 @@
 
     <style name="menuStyle"
         parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="background">@color/baby_goldenrose</item>
+        <item name="background">@color/gray</item>
     </style>
 
 </resources>

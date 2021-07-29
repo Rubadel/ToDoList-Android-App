@@ -1,33 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">@color/baby_rose</color>
-    <color name="purple_500">@color/baby_rose</color>
-    <color name="purple_700">@color/baby_rose</color>
-    <color name="teal_200">@color/baby_rose</color>
-    <color name="teal_700">@color/baby_rose</color>
-    <color name="black">@color/baby_orange</color>
+    <color name="purple_200">@color/gray</color>
+    <color name="purple_500">@color/gray</color>
+    <color name="purple_700">@color/gray</color>
+    <color name="teal_200">@color/gray</color>
+    <color name="teal_700">@color/gray</color>
+    <color name="black">@color/gray</color>
+
+
     <color name="white">#FFFFFFFF</color>
-
-    <color name="baby_rose"> #FFFAE6DF</color>
-    <color name="dark_rose"> #FF0202</color>
-
-    <color name="orange"> #E9967A</color>
-    <color name="light_orange"> #ffb284</color>
-    <color name="dark_orange"> #e76f71</color>
-    <color name="baby_orange"> #f7cebf</color>
-    <color name="white_orange"> #fae6df</color>
-    <color name="baby_yellow">#BEF9E79F</color>
-
-
-    <color name="baby_goldenrose">#efd9ce</color>
-    <color name="gbrown">#868386</color>
-    <color name="baby_gbrown">#928e89</color>
-    <color name="brown">#94806c</color>
-    <color name="light_brown">#bba485</color>
-
-
-
-
-
-
+    <color name="baby_blue">#EAECEE</color>
+    <color name="pastel_orange">#F0B27A</color>
+    <color name="gray">#17202A</color>
 </resources>

@@ -10,70 +10,75 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/bk"
+        android:background="@color/baby_blue"
         tools:context=".UpdateToDoList">
+
 
         <EditText
             android:id="@+id/ed_todoTile"
-            android:layout_width="404dp"
-            android:layout_height="74dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="8dp"
-            android:fontFamily="casual"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_marginTop="68dp"
+            android:background="@drawable/ic_title"
+            android:fontFamily="serif-monospace"
             android:hint="date / time"
             android:inputType="datetime"
-            android:paddingStart="10dp"
-            android:textSize="25sp"
-            app:layout_constraintBottom_toTopOf="@+id/ed_todoContent"
+            android:paddingStart="15dp"
+            android:paddingTop="20dp"
+            android:textColor="#000000"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_update" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_update"
+            app:layout_constraintBottom_toTopOf="@+id/ed_todoContent"/>
 
         <EditText
             android:id="@+id/ed_todoContent"
-            android:layout_width="392dp"
-            android:layout_height="611dp"
-            android:layout_marginBottom="4dp"
-            android:background="@drawable/body_note"
-            android:fontFamily="casual"
+            android:layout_width="match_parent"
+            android:layout_height="600dp"
+            android:background="@drawable/ic_bodyy"
+            android:fontFamily="serif-monospace"
             android:gravity="start"
             android:hint="content"
             android:lines="100"
-            android:textSize="25sp"
-            android:paddingStart="10dp"
+            android:paddingStart="7dp"
+            android:textColor="@color/black"
+            android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.421"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ed_todoTile"/>
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_arrow_back"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/btn_update"
-            app:layout_constraintTop_toTopOf="@+id/btn_update"
-            android:layout_marginEnd="30dp"
             android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="30dp"
             android:onClick="back"
-            />
+            android:src="@drawable/ic_arrow_back"
+            app:layout_constraintEnd_toEndOf="@+id/btn_update"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
         <TextView
             android:id="@+id/btn_update"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:layout_marginEnd="340dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginBottom="5dp"
-            android:backgroundTint="@color/brown"
-            android:fontFamily="casual"
-            android:text="Save"
-            android:textSize="18sp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="18dp"
-            app:layout_constraintBottom_toTopOf="@+id/ed_todoTile"/>
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="340dp"
+            android:fontFamily="@font/amaranth_bold"
+            android:text="Save"
+            android:textColor="@color/pastel_orange"
+            android:textSize="22sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -12,79 +12,77 @@
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:elevation="20dp"
-        app:cardCornerRadius="10dp">
+        app:cardCornerRadius="10dp"
+        android:backgroundTint="@color/baby_blue">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="wrap_content"
-            android:layout_height="153dp"
-            android:background="@color/baby_goldenrose">
+            android:layout_width="193dp"
+            android:layout_height="170dp"
+            android:background="@drawable/ic_note_label"
+            android:elevation="0dp">
 
 
             <TextView
                 android:id="@+id/tv_todoTitle"
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:fontFamily="@font/amaranth_bold"
+                android:layout_width="104dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="52dp"
+                android:fontFamily="@font/anonymous_pro"
                 android:gravity="center"
                 android:text="Title"
-                android:textColor="@color/brown"
-                android:textColorHighlight="@color/orange"
-                android:textSize="20dp"
+                android:textColor="@color/gray"
+                android:textColorHighlight="@color/baby_blue"
+                android:textSize="17dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.486"
+                app:layout_constraintHorizontal_bias="0.483"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tv_todoContent"
-                android:layout_width="106dp"
-                android:layout_height="58dp"
-                android:layout_marginTop="5dp"
+                android:layout_width="105dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="1dp"
                 android:layout_marginBottom="10dp"
                 android:fontFamily="serif-monospace"
                 android:gravity="center"
-                android:text="*** Content ***"
-                android:textColor="@color/brown"
-                android:textColorHighlight="@color/orange"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:text="content"
+                android:textColor="@color/gray"
+                android:textColorHighlight="@color/baby_blue"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toTopOf="@id/checkBox"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.48"
+                app:layout_constraintHorizontal_bias="0.493"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_todoTitle"
-                app:layout_constraintVertical_bias="0.149" />
+                app:layout_constraintVertical_bias="0.0" />
 
             <ImageButton
                 android:id="@+id/btn_delete"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="3dp"
-                android:layout_marginEnd="112dp"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/ic_delete"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/checkBox"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/checkBox" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_todoContent"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="116dp"
+                android:background="@drawable/ic_delete"/>
 
             <CheckBox
                 android:id="@+id/checkBox"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:layout_marginStart="2dp"
-                android:layout_marginTop="100dp"
-                android:buttonTint="@color/brown"
-                android:foregroundTint="@color/baby_rose"
-                android:shadowColor="@color/baby_goldenrose"
-                android:textColorHighlight="@color/baby_goldenrose"
-                android:textColorHint="@color/baby_rose"
-                android:textColorLink="@color/baby_goldenrose"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="109dp"
+                android:buttonTint="@color/pastel_orange"
+                android:foregroundTint="@color/gray"
+                android:shadowColor="@color/gray"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/btn_delete"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.836" />
+                app:layout_constraintVertical_bias="0.25" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>

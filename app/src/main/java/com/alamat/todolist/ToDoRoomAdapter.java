@@ -82,7 +82,9 @@ public class ToDoRoomAdapter extends RecyclerView.Adapter<ToDoRoomAdapter.ViewHo
      holder.itemView.setOnClickListener(new View.OnClickListener() {
          @Override
          public void onClick(View v) {
-             onItemUpdate.onItemUpdate(position, todoModels.get(position).getId());
+             if(onItemUpdate !=null) {
+                 onItemUpdate.onItemUpdate(position, todoModels.get(position).getId());
+             }
          }
      });
 
