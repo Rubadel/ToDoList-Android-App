@@ -27,11 +27,12 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
-    dataBinding {
-        enabled = true
-    }
+//    dataBinding {
+//        enabled = true
+//    }
     buildFeatures {
-        viewBinding true
+//        viewBinding true
+        dataBinding true
     }
 }
 
@@ -76,9 +77,18 @@ dependencies {
 //    implementation 'com.google.firebase:firebase-core:19.0.0'
 
     //DataBase Room
-    def room_version = "2.3.0"
+    def room_version = "2.4.0"
 
-    implementation "androidx.room:room-runtime:$room_version"
-    annotationProcessor "androidx.room:room-compiler:$room_version"
+//    for windows
+//    implementation "androidx.room:room-runtime:$room_version"
+//    annotationProcessor "androidx.room:room-compiler:$room_version"
+
+//    for mac M1 chip
+    implementation "androidx.room:room-runtime:2.4.0-alpha03"
+    annotationProcessor "androidx.room:room-compiler:2.4.0-alpha03"
+//    kapt 'androidx.room:room-compiler:2.4.0-alpha03'
+
+
+
 
 }
